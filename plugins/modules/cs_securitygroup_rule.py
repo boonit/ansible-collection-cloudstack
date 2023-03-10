@@ -243,6 +243,7 @@ class AnsibleCloudStackSecurityGroupRule(AnsibleCloudStack):
         args = {
             'securitygroupname': security_group_name,
             'projectid': self.get_project('id'),
+            'listall': True,
         }
         sgs = self.query_api('listSecurityGroups', **args)
         if not sgs or 'securitygroup' not in sgs:
