@@ -557,6 +557,7 @@ class AnsibleCloudStack:
 
         args = {
             'listall': True,
+            'keyword': domain.split('/')[-1],
         }
         domains = self.query_api('listDomains', **args)
         if domains:
